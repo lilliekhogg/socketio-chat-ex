@@ -1,0 +1,27 @@
+{
+  "name": "socket-chat",
+  "version": "0.0.1",
+  "description": "web socket chat widget",
+  "main": "index.js",
+  "author": "web research sprint 2",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^1.7.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/socketio/chat-example.git"
+  },
+  "keywords": [
+    "socket.io"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/socketio/chat-example/issues"
+  },
+  "homepage": "https://github.com/socketio/chat-example#readme"
+}
