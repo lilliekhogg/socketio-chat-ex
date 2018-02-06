@@ -1,4 +1,5 @@
 # socketio-chat-ex
+A websocket real time chat room using the socket.io tutorial, used for WebResearch Sprint Two
 
 # Install dependencies
 1. npm install --save
