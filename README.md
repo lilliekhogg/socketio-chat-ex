@@ -10,3 +10,4 @@ A websocket real time chat room using the socket.io tutorial, used for WebResear
 1. git clone repository
 2. cd socketio-chat-ex
 3. node index.js
+4. run localhost:8080 or visit ip that vm is running on
