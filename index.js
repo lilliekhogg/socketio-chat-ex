@@ -1,32 +1,26 @@
+// Setup basic express server
 var express = require('express');
 var app = express();
 var path = require('path');
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 var port = process.env.PORT || 8080;
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+server.listen(port, function () {
+  console.log('Server listening at port %d', port);
 });
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
+// Routing
+app.use(express.static(path.join(__dirname, 'files')));
 
-//listening on port
-http.listen(port, function(){
-  console.log('listening on *:' + port);
-});
+// Chatroom
 
-//chatroom numbers
 var numUsers = 0;
 
 io.on('connection', function (socket) {
   var addedUser = false;
 
-// when the client emits 'new message', this listens and executes
+  // when the client emits 'new message', this listens and executes
   socket.on('new message', function (data) {
     // we tell the client to execute 'new message'
     socket.broadcast.emit('new message', {
@@ -51,12 +45,12 @@ io.on('connection', function (socket) {
       username: socket.username,
       numUsers: numUsers
     });
-  });
+    });
 
   // when the client emits 'typing', we broadcast it to others
   socket.on('typing', function () {
     socket.broadcast.emit('typing', {
-     username: socket.username
+      username: socket.username
     });
   });
 
@@ -75,9 +69,8 @@ io.on('connection', function (socket) {
       // echo globally that this client has left
       socket.broadcast.emit('user left', {
         username: socket.username,
-        numUsers: numUsers
-         });
+          numUsers: numUsers
+      });
     }
   });
 });
-    
