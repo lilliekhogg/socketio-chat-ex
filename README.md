@@ -1,11 +1,11 @@
 # socketio-chat-ex
 
 # Install dependencies
-npm install --save
-npm install --save express@4.15.2
-npm install --save socket.io
+1. npm install --save
+2. npm install --save express@4.15.2
+3. npm install --save socket.io
 
 # Running the chat room
-. git clone repository
-. cd socketio-chat-ex
-. node index.js
+1. git clone repository
+2. cd socketio-chat-ex
+3. node index.js
