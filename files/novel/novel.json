@@ -4,6 +4,7 @@
   "inventories": [
     [
       {
+        "__comment__": "This is the player characters health",
         "name": "Health",
         "value": 100,
         "hidden": false
