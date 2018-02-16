@@ -1,31 +1,69 @@
-/* Fix user-agent */
+#novel-style-area {
+  background-color: #FAFAFA;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  width: 40rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem; }
 
-* {
-  box-sizing: border-box;
-}
+#novel-text-area {
+  overflow: auto; }
 
-html {
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-}
+#novel-choices-area {
+  overflow: auto; }
 
-html, input {
-  font-family:
-    "HelveticaNeue-Light",
-    "Helvetica Neue Light",
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    "Lucida Grande",
-    sans-serif;
-}
+#novel-notification-wrapper {
+  position: absolute;
+  left: 50%; }
+  #novel-notification-wrapper .novel-notification {
+    background-color: #FAFAFA;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    text-align: center;
+    position: relative;
+    left: -50%;
+    margin: auto;
+    padding: 1rem;
+    display: none; }
+    #novel-notification-wrapper .novel-notification button {
+      margin: 0.4rem; }
+    #novel-notification-wrapper .novel-notification textarea {
+      width: 40rem;
+      height: 30rem; }
 
-html, body {
-  height: 50%;
-  bottom:100px;
-  margin: 0;
-  padding: 0;
-}
+#novel-skip-button {
+  float: right; }
+
+#novel-area a {
+  text-decoration: none;
+  color: #1976D2; }
+  #novel-area a:hover {
+    color: #42A5F5; }
+
+#novel-area ul {
+  padding-left: 1rem;
+  list-style-type: circle; }
+
+#novel-inventory li .novel-inventory-item-info {
+  display: none; }
+
+#novel-inventory li:hover .novel-inventory-item-info {
+  display: inline; }
+  #novel-inventory li:hover .novel-inventory-item-info li {
+    margin-left: 2rem; }
+
+#novel-footer-text {
+  padding-top: 1rem;
+  font-size: 80%;
+  color: #BDBDBD; }
+  #novel-footer-text a {
+    color: #757575; }
+
+.highlight-1 {
+  font-weight: bold; }
+
+.highlight-2 {
+  font-weight: bold;
+  color: red; }
 
 ul {
   list-style: none;
@@ -36,15 +74,19 @@ ul {
 
 .pages {
   height: 50%;
-  margin: 0;
+  margin-right: 0;
   padding: 0;
   width: 50%;
+  float:right;
 }
 
 .page {
+  margin-right:0;
+  float:right;
   height: 50%;
-  position: absolute;
+  position: relative;
   width: 50%;
+  top:500px;
   }
 
 /* Login Page */
@@ -55,12 +97,12 @@ ul {
 
 .login.page .form {
   height: 100px;
-  margin-top: -100px;
+  margin-right:0;
   position: absolute;
-
   text-align: center;
   top: 50%;
   width: 50%;
+  float:right;
 }
 
 .login.page .form .usernameInput {
@@ -70,7 +112,7 @@ ul {
   outline: none;
   padding-bottom: 15px;
   text-align: center;
-  width: 400px;
+  width: 200px;
 }
 
 .login.page .title {
@@ -92,6 +134,8 @@ ul {
 
 .chat.page {
   display: none;
+  width:200px;
+  height:500px;
 }
 
 /* Font */
