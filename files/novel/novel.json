@@ -1,0 +1,626 @@
+{
+  "name": "gameTest",
+  "version": "0.0.1",
+  "inventories": [
+    [
+      {
+        "name": "Health",
+        "value": 100,
+        "hidden": false
+      },
+      {
+        "name": "Companion",
+        "displayName": "MotherGoose",
+        "value": 0,
+        "hidden": true
+      },
+      {
+        "name": "Companion",
+        "displayName": "Jack",
+        "value": 0,
+        "hidden": true
+      },
+      {
+        "name": "Companion",
+        "displayName": "Huntsman",
+        "value": 0,
+        "hidden": true
+      },
+      {
+        "name": "Companion",
+        "displayName": "Doctor",
+        "value": 0,
+        "hidden": false
+      },
+      {
+        "name": "oak",
+        "displayName": "OakBranch",
+        "value": 0,
+        "hidden": false
+      },
+      {
+        "name": "teady",
+        "displayName": "TeadyBear",
+        "value": 0,
+        "description": "Higher chance to hit the enemy and dodge enemy attacks",
+        "hidden": false
+      },
+      {
+        "name": "smith",
+        "displayName": "SmithAndWesson",
+        "value": 0,
+        "description": "Higher physical attack",
+        "hidden": false
+      },
+      {
+        "name": "staff",
+        "displayName": "StaffOfTheLivingTribunal",
+        "value": 0,
+        "description": "Higher magical attack",
+        "hidden": false
+      },
+      {
+        "name": "Wolf",
+        "value": 50,
+        "hidden": true
+      }
+    ]
+  ],
+  "scenes": [
+    {
+      "name": "Scene 1.0.0 - the beginning",
+      "text": [
+        "You felt tired.",
+        "Everything is blurry when you try to open your eyes. <br><br> You manage to catch a glimpse of the white ceiling before everything slowly faded into darkness.",
+        "Click Start to begin your adventure.",
+        "Click load to load a saved game."
+      ],
+      "style": "main-menu",
+      "choices": [
+        {
+          "text": "Start",
+          "name": "Continue",
+          "nextScene": "Scene 1.0.1"
+        }
+      ]
+    },
+    {
+      "name": "Scene 1.0.1",
+      "text": [
+        "When you open your eyes again, you feel that you are laying on something soft and moist. As you hear birds chirping high above you, you realise that you are outside...somewhere in a forest.",
+        "You see four figures standing near you: a woman, a man with gun, a man with specs and a child. Under the clear sky, you can see that all of them are wearing something not belonging to the modern era.",
+        "Suddenly, you hear something rustling in the bush behind you.The child shouts, “It is coming!”, a wolf leaps out from behind the bush. You notice you have a stick beside you, estimating the distance between you and the wolf, you have no choice but to fight!",
+        "Who should you choose to fight along with you?"
+      ],
+      "choices": [
+        {
+          "text": "The woman, who wears a long gown.",
+          "name": "woman",
+          "nextScene": "womanComp"
+        },
+        {
+          "text": "The muscular man, who looks like a hunter with gun.",
+          "name": "hunter",
+          "nextScene": "huntComp"
+        },
+        {
+          "text": "The man with specs, who looks very slender.",
+          "name": "doc",
+          "nextScene": "docComp"
+        },
+        {
+          "text": "The child.",
+          "name": "child",
+          "nextScene": "childComp"
+        }
+      ]
+    },
+    {
+      "name": "Scene 1.0.2",
+      "text": "Who should you choose to fight along with you?",
+      "choices": [
+        {
+          "text": "The woman, who wears a long gown.",
+          "name": "woman",
+          "nextScene": "womanComp"
+        },
+        {
+          "text": "The muscular man, who looks like a hunter with gun.",
+          "name": "hunter",
+          "nextScene": "huntComp"
+        },
+        {
+          "text": "The man with specs, who looks very slender.",
+          "name": "doc",
+          "nextScene": "docComp"
+        },
+        {
+          "text": "The child.",
+          "name": "child",
+          "nextScene": "childComp"
+        }
+      ]
+    },
+    {
+      "name": "womanComp",
+      "text": [
+        "The woman was shocked that you picked her as your companion. She hesitated, but managed to pick up another rough stick near her and joined you in battle.",
+        "You saw that the wolf seemed to be limping as it was circling around you and the woman. Although you do not understand why there was only one wolf instead of a pack of them, you know that you might be dead if you hesitate any longer.",
+        "You've gained the Oak Branch! Mother Goose has 60% chance to dodge enemy attacks.",
+        "Your game has been saved!"
+      ],
+      "setItem": "MotherGoose,100",
+      "addItem": "OakBranch,5",
+      "choices": [
+        {
+          "text": "Start the fight!",
+          "nextScene": "battle"
+        },
+        {
+          "text": "Choose a different companion to fight with you.",
+          "nextScene": "Scene 1.0.2",
+          "removeItem": "!OakBranch,5 |MotherGoose,100"
+        }
+      ]
+    },
+    {
+      "name": "huntComp",
+      "text": [
+        "The man calmly accepts your offer. He slowly steps towards you without agitating the wolf too much. You saw that the wolf seemed to be limping as it was circling around you.",
+        "Although you do not understand why there was only a wolf instead of a pack of them, you know that you might be dead if you hesitated any longer.",
+        "You've gained the Smith and Wesson! Huntsman has 50% chance to dodge enemy attacks.",
+        "Your game has been saved!"
+      ],
+      "setItem": "Huntsman,120",
+      "addItem": "SmithAndWesson,5",
+      "choices": [
+        {
+          "text": "Start the fight!",
+          "nextScene": "battle"
+        },
+        {
+          "text": "Choose a different companion to fight with you.",
+          "nextScene": "Scene 1.0.2",
+          "removeItem": "!SmithAndWesson,5 |Huntsman,120"
+        }
+      ]
+    },
+    {
+      "name": "docComp",
+      "text": [
+        "The man raises his eyebrows when you ask him to be your companion, however, he still joins you by your side without a word. You saw that the wolf seemed to be limping as it was circling around you.",
+        "Although you do not understand why there was only a wolf instead of a pack of them, you know that you might be dead if you hesitated any longer.",
+        "You've gained the Staff of the Living Tribunal! Doctor has 40% chance to dodge enemy attacks.",
+        "Your game has been saved!"
+      ],
+      "setItem": "Doctor,100",
+      "addItem": "StaffOfTheLivingTribunal,5",
+      "choices": [
+        {
+          "text": "Start the fight!",
+          "nextScene": "battle"
+        },
+        {
+          "text": "Choose a different companion to fight with you.",
+          "nextScene": "Scene 1.0.2",
+          "removeItem": "!StaffOfTheLivingTribunal,5 |Doctor,100"
+        }
+      ]
+    },
+    {
+      "name": "childComp",
+      "text": [
+        "The other three people were shocked when they saw you chose the child as your companion. The child just smiled brightly at you and joined you by your side quickly.",
+        "You saw that the wolf seemed to be limping as it was circling around you. Although you do not understand why there was only a wolf instead of a pack of them, you know that you might be dead if you hesitated any longer.",
+        "You've gained the Teady Bear! Jack has 80% chance to dodge enemy attacks."
+      ],
+      "setItem": "Jack,80",
+      "addItem": "TeadyBear,1",
+      "choices": [
+        {
+          "text": "Start the fight!",
+          "nextScene": "battle"
+        },
+        {
+          "text": "Choose a different companion to fight with you.",
+          "nextScene": "Scene 1.0.2",
+          "removeItem": "!TeadyBear,1 |Jack,80"
+        }
+      ]
+    },
+    {
+      "name": "battle",
+      "text": [
+        "[if inv.Wolf > 0]What do you want to do?[/if]",
+        "The Wolf has [print inv.Wolf] hit points.",
+        "[if inv.Wolf <= 0]<b>The Wolf is dead! You Win!</b>[/if]",
+        "[if inv.Health <= 0]You Have Died![/if]"
+    ],
+      "saveCheckpoint": "beforeBattle",
+      "choices": [
+        {
+          "text": "[if inv.Wolf > 0&&inv.Jack < 1]Attack![/if]",
+          "nextScene": "hitWolf,0.5|missWolf,0.3|critWolf,0.2"
+        },
+        {
+          "text": "[if inv.Wolf > 0&&inv.Jack > 0]Attack![/if]",
+          "nextScene": "hitWolf,0.6|missWolfTB,0.1|critWolf,0.3"
+        },
+        {
+          "text": "[if inv.Wolf > 0]Tell Your Companion to Attack[/if]",
+          "nextScene": "compAtt"
+        },
+        {
+          "text": "[if inv.Wolf > 0]Use Your Item[/if]",
+          "nextScene": "inv"
+        },
+        {
+          "text": "[if inv.Wolf <= 0]Continue[/if]",
+          "nextScene": "Scene1.2.1"
+        },
+        {
+          "text": "[if inv.Health <= 0]Restart the game from the begin.[/if]",
+          "nextScene": "Scene1.2.1"
+        }
+      ]
+    },
+    {
+      "name": "inv",
+      "text": "You look at what you have avaliable",
+      "choices": [
+        {
+          "text": "[if inv.Doctor > 0||inv.StaffOfTheLivingTribunal > 0]Staff of the Living Tribunal[/if]",
+          "nextScene": "staffHit,0.4|staffMiss,0.6",
+          "removeItem": "StaffOfTheLivingTribunal,1"
+        },
+        {
+          "text": "[if inv.Doctor > 0&&if inv.StaffOfTheLivingTribunal <= 0]You have run out of shots of the Living Tribunal.[/if]",
+          "nextScene": "battle"
+        },
+        {
+          "text": "[if inv.Huntsman > 0||inv.SmithAndWesson > 0]Smith and Wesson[/if]",
+          "nextScene": "gunHit,0.5|gunMiss,0.5",
+          "removeItem": "SmithAndWesson,1"
+        },
+        {
+          "text": "[if inv.Huntsman > 0&&inv.SmithAndWesson <= 0]You have run out of shots of the Smith and Wesson.[/if]",
+          "nextScene": "battle"
+        },
+        {
+          "text": "[if inv.MotherGoose > 0]Oak Branch[/if]",
+          "nextScene": "branchHeal",
+          "removeItem": "OakBranch,1"
+        },
+        {
+          "text": "back",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "compAtt",
+      "text": "You look to your companion to attack.",
+      "choices": [
+        {
+          "text": "[if inv.Jack > 0]Jack[/if]",
+          "nextScene": "compHit,0.4|jackMiss,0.3|compCrit,0.3"
+        },
+        {
+          "text": "[if inv.Doctor > 0]Doctor[/if]",
+          "nextScene": "compHit,0.5|docMiss,0.1|compCrit,0.4"
+        },
+        {
+          "text": "[if inv.Huntsman > 0]Huntsman[/if]",
+          "nextScene": "compHit,0.7|huntMiss,0.2|compCrit,0.1"
+        },
+        {
+          "text": "[if inv.MotherGoose > 0]Mother Goose[/if]",
+          "nextScene": "compHit,0.6|momMiss,0.2|compCrit,0.2"
+        },
+        {
+          "text": "back",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "hitWolf",
+      "text": "You struct the wolf and did 10 damage",
+      "removeItem": "!Wolf,10",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "missWolf",
+      "text": "You missed the wolf and the wolf bit you doing 10 damage",
+      "removeItem": "Health,10",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "missWolfTB",
+      "text": "You missed the wolf and the wolf bit you doing 5 damage",
+      "removeItem": "Health,5",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "critWolf",
+      "text": "You struct the wolf and did 15 damage",
+      "removeItem": "!Wolf,15",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },{
+      "name": "compHit",
+      "text": "Your companion struct the wolf and did 10 damage",
+      "removeItem": "!Wolf,10",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "jackMiss",
+      "text": "Your companion missed the wolf and the wolf bit your companion doing 10 damage",
+      "removeItem": "Jack,10",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "docMiss",
+      "text": "Your companion missed the wolf and the wolf bit your companion doing 10 damage",
+      "removeItem": "Doctor,10",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "huntMiss",
+      "text": "Your companion missed the wolf and the wolf bit your companion doing 10 damage",
+      "removeItem": "Huntsman,10",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "momMiss",
+      "text": "Your companion missed the wolf and the wolf bit your companion doing 10 damage",
+      "removeItem": "MotherGoose,10",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "compCrit",
+      "removeItem": "!Wolf,15",
+      "text": "Your companion struct the wolf and did 15 damage",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "staffHit",
+      "removeItem": "!Wolf,24",
+      "text": "You pointed the staff at the wolf a fork of lighting lept from its tip, striking the wolf and dealing 24 damage.",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "staffMiss",
+      "removeItem": "Health,12",
+      "text": "You pointed the staff at the wolf however, it back fired, striking you for 12 damage.",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "gunHit",
+      "removeItem": "!Wolf,28",
+      "text": "You pointed the Smith and Wesson at the wolf, and fired striking the wolf for 28 damage.",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "gunMiss",
+      "removeItem": "Health,16",
+      "text": "You pointed the Smith and Wesson at the wolf, and it backed fired striking you for 16 damage.",
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "branchHeal",
+      "text": [
+        "[if inv.OakBranch > 0]Who do you to heal? Doing this will give them ten health back.[/if]",
+        "[if inv.OakBranch <= 0]Looks like you've ran out of charges.[/if]"
+      ],
+      "choices": [
+        {
+          "text": "[if inv.OakBranch > 0]Yourself[/if]",
+          "addItem": "Health,10",
+          "nextScene": "battle"
+        },
+        {
+          "text": "[if inv.OakBranch > 0]Jack[/if]",
+          "addItem": "!Jack,10",
+          "nextScene": "battle"
+        },
+        {
+          "text": "[if inv.OakBranch > 0]Huntsman[/if]",
+          "addItem": "!Huntsman,10",
+          "nextScene": "battle"
+        },
+        {
+          "text": "[if inv.OakBranch > 0]Mother Goose[/if]",
+          "addItem": "!MotherGoose,10",
+          "nextScene": "battle"
+        },
+        {
+          "text": "[if inv.OakBranch > 0]Doctor[/if]",
+          "addItem": "!Doctor,10",
+          "nextScene": "battle"
+        },
+        {
+          "text": "Back",
+          "nextScene": "battle"
+        }
+      ]
+    },
+    {
+      "name": "Scene1.2.1",
+      "text": [
+        "The other three people do not interfere with the battle and just stand further away while watching your battle without speaking a word. You feel uneasy and frustrated as they do not help you to defeat the wolf together. You noticed all of them exchange glances and walked away into the distance. ",
+        "Immediately, you want to halt them, but your companion stopped you. Your companion speaks, “It’s ok. They are just going back to the village. Let’s pick up the wolf’s hide, we can use that to get some money.” You looked at the corpse, hesitated, but still follow your companion’s instruction.",
+        "As you watched how your companion dealt with the wolf’s corpse, you try to recall everything that has happened. You remembered that you saw a white ceiling before you closed your eyes, then, the next minute you opened your eyes, you were laying on the forest ground. You tried to remember the events before you saw the white ceiling, and shockingly find out that you do not remember anything in the past.",
+        "You look at your body and find that you are quite slender. You are definitely wearing a T-shirt and trousers. You put your hands into the pockets and find out that there is a card, which states “University of Portsmouth” on the first line and “Student Card” on the second line where the other information on the card was blurred for an unknown reason. Your companion took out a piece of paper and looked at you,“This was found beside you when we saw you.”",
+        "It was a paper with some words written on it. “You are the last one.”"
+      ],
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "Scene1.2.2"
+        }
+      ]
+    },
+    {
+      "name": "Scene1.2.2",
+      "text": [
+          "Confused, you look at your companion, who oddly starts to explain everything to you, they insist you go to the village.",
+          "After some explanation, you realise this is not a modern era, it is a place where there is no electricity, computers or wifi connection. It seems that it is some rural village in Europe during the Middle Ages. The four of them saw you this morning and was planning to bring you back to the village.",
+          "You can not understand the reason for your companion to talk so calmly to you. “Why aren’t you shocked at all? Finding some stranger with bizarre clothing laying on the ground...Isn’t it strange?”",
+          "Your companion looked at you, and answered, “Well, I experienced the same thing before.”",
+          "“I closed my eyes and the next time I opened, I was here.”",
+          "You stare at your companion in disbelief, while your companion leads you to the entrance of the village."
+        ],
+      "choices": [
+        {
+          "text": "Next",
+          "nextScene": "Scene1.3"
+        }
+      ]
+    },
+    {
+      "name": "Scene1.3",
+      "text": [
+        "Your companion leads you to see the chief of the village as you need a place to stay. The chief stares at your companion, mumbling, “Another again?” Your companion smiled and said to you, “Well, I’ll be leaving. If you want some help to explore the forest, you can find all of us around here.”",
+        "The chief turned to you and said, “We do not have much options here. I heard that you have defeat a wolf near the forest right? Since we do not have much working opportunities here, if you want some money, I will suggest you to find something in the forest to exchange for some materials or money from the villagers in this village.”",
+        "“I believe you don’t have a place to live right? We do not really have much spaces here for outsiders. Let me have a look…”",
+        "The chief then offer you some options, which will you choose?"
+      ],
+      "choices": [
+
+        {
+          "text": "Mother Goose's House",
+          "nextScene": "House",
+          "addItem": "!mGHouse,1"
+        },
+        {
+          "text": "Huntsman's House",
+          "nextScene": "House",
+          "addItem": "!HHouse,1"
+        },
+        {
+          "text": "Doctor's House",
+          "nextScene": "House",
+          "addItem": "!DHouse,1"
+        },
+        {
+          "text": "Jack's House",
+          "nextScene": "House",
+          "addItem": "!JHouse,1"
+        }
+      ]
+    },
+    {
+      "name": "House",
+      "text": [
+        "<b>This is a beta version of the game. More to come soon!</b>"
+      ],
+      "choices": [
+        {
+          "text": "The Beginning.",
+          "nextScene": "Scene 1.0.0 - the beginning"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "debugMode": false,
+    "soundSettings": {
+      "defaultClickSound": "click",
+      "defaultScrollSound": "click"
+    }
+  },
+  "uiText": [
+    {"name": "saveText", "language": "english", "content": "Copy and save your save data:" },
+    {"name": "loadText", "language": "english", "content": "Paste your save data here:" },
+    {"name": "closeButton", "language": "english", "content": "Close" },
+    {"name": "copyButton", "language": "english", "content": "Copy" },
+    {"name": "saveButton", "language": "english", "content": "Save" },
+    {"name": "loadButton", "language": "english", "content": "Load" },
+    {"name": "loadDataButton", "language": "english", "content": "Load" },
+    {"name": "skipButton", "language": "english", "content": "Skip" },
+    {"name": "continueButton", "language": "english", "content": "Continue" },
+    {"name": "inventoryTitle", "language": "english", "content": "Inventory:" },
+    {"name": "hiddenInventoryTitle", "language": "english", "content": "Stats:" },
+    {"name": "saveText", "language": "finnish", "content": "Kopioi ja tallenna tallennusdatasi:" },
+    {"name": "loadText", "language": "finnish", "content": "Liitä tallennusdatasi tähän:" },
+    {"name": "closeButton", "language": "finnish", "content": "Sulje" },
+    {"name": "copyButton", "language": "finnish", "content": "Kopioi" },
+    {"name": "saveButton", "language": "finnish", "content": "Tallenna" },
+    {"name": "loadButton", "language": "finnish", "content": "Lataa" },
+    {"name": "loadDataButton", "language": "finnish", "content": "Lataa" },
+    {"name": "skipButton", "language": "finnish", "content": "Ohita" },
+    {"name": "continueButton", "language": "finnish", "content": "Jatka" },
+    {"name": "inventoryTitle", "language": "finnish", "content": "Esineet:" },
+    {"name": "hiddenInventoryTitle", "language": "finnish", "content": "Tilastot:" }
+  ]
+}
