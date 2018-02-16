@@ -1,38 +1,32 @@
 {
   "name": "gameTest",
   "version": "0.0.1",
-  "__comment__": "This is the player inventory it stores player stats, Companion stats, and Items",
   "inventories": [
     [
       {
-        "__comment__": "This is the player characters health.",
         "name": "Health",
         "value": 100,
         "hidden": false
       },
       {
-        "__comment__": "This is the player characters Companion, name MotherGoose",
         "name": "Companion",
         "displayName": "MotherGoose",
         "value": 0,
         "hidden": true
       },
       {
-        "__comment__": "This is the player characters Companion, name Jack",
         "name": "Companion",
         "displayName": "Jack",
         "value": 0,
         "hidden": true
       },
       {
-        "__comment__": "This is the player characters Companion, name Huntsman",
         "name": "Companion",
         "displayName": "Huntsman",
         "value": 0,
         "hidden": true
       },
       {
-        "__comment__": "This is the player characters Companion, name Doctor",
         "name": "Companion",
         "displayName": "Doctor",
         "value": 0,
