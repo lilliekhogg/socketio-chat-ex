@@ -269,21 +269,21 @@
       "text": "You look at what you have avaliable",
       "choices": [
         {
-          "text": "[if inv.Doctor > 0||inv.StaffOfTheLivingTribunal > 0]Staff of the Living Tribunal[/if]",
+          "text": "[if inv.Doctor > 0]Staff of the Living Tribunal[/if]",
           "nextScene": "staffHit,0.4|staffMiss,0.6",
           "removeItem": "StaffOfTheLivingTribunal,1"
         },
         {
-          "text": "[if inv.Doctor > 0&&if inv.StaffOfTheLivingTribunal <= 0]You have run out of shots of the Living Tribunal.[/if]",
+          "text": "[if inv.Doctor > 0]You have run out of shots of the Living Tribunal.[/if]",
           "nextScene": "battle"
         },
         {
-          "text": "[if inv.Huntsman > 0||inv.SmithAndWesson > 0]Smith and Wesson[/if]",
+          "text": "[if inv.Huntsman > 0]Smith and Wesson[/if]",
           "nextScene": "gunHit,0.5|gunMiss,0.5",
           "removeItem": "SmithAndWesson,1"
         },
         {
-          "text": "[if inv.Huntsman > 0&&inv.SmithAndWesson <= 0]You have run out of shots of the Smith and Wesson.[/if]",
+          "text": "[if inv.Huntsman > 0]You have run out of shots of the Smith and Wesson.[/if]",
           "nextScene": "battle"
         },
         {
