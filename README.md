@@ -7,5 +7,3 @@ A Textbased multiplayer adventure game using websockets for real time chat rooms
 3. ``` sh npminstall.sh ```
 4. ``` node index.js```
 5. run localhost:8080 or visit ip that vm is running on
-
-## Reminder for rob to comment novel.json
